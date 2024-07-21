@@ -5,7 +5,7 @@ import Stripe from "stripe";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const placeOrder = async (req, res) => {
-    const frontend_url = "http://localhost:3000";
+    const frontend_url = process.env.frontendurl;
 
     try {
         const { userId, items, amount, address } = req.body;
